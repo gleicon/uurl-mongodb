@@ -1,0 +1,53 @@
+!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"> 
+<html lang="en"> 
+ 
+<head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>uURL</title> 
+    <link rel="stylesheet" href="main.css" type="text/css" media="screen" charset="utf-8"> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.sparkline.min.js"></script>
+    <script>
+        $(function() {
+            $('.inlinesparkline').sparkline('html',{type:'bar', defaultPixelsPerValue:10}); 
+       });
+    </script>
+
+</head>
+
+<body> 
+<div id='topbar'> 
+    <h1 style="float: left">Cyclone|Mongo|Redis|URL Shortener|</h1> 
+</div> 
+ 
+<div id='content'> 
+ 
+    URL: <a href={{stats['e_url']}}>{{stats['e_url'] }}</a><br>
+    STATS: <a href={{stats['e_url']}}+>{{stats['e_url']}}+ (yes, with plus sign after)</a><br>
+    Clicks (total since {{stats['date']}}): {{stats['clicks']}}<br>
+    Visitors:
+    <ul>
+    {% for v in stats['visitors'] %}
+    <li>{{v}}</li>
+    {% end %}
+    </ul>
+    Referers:<br>
+    <ul>
+    {% for r in stats['referers'] %}
+    <li>{{v}}</li>
+    {% end %}
+    </ul>
+    
+    <p>
+    Clicks per Hour today, starting {{stats['date']}}: <span class="inlinesparkline">{{range}}</span>
+    </p>
+
+</div> 
+<div id='footer'> 
+        (c) gleicon 2010  
+</div> 
+ 
+</body> 
+</html> 
+
+

@@ -1,0 +1,59 @@
+body {
+        background: #eee;
+        font-family: Verdana;
+        padding: 0px;
+        margin: 0px;
+}
+ 
+a {
+    color: #333;
+    text-decoration: none;
+}
+ 
+#content {
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+}
+ 
+div#footer { 
+    background: #666;
+    clear: both;
+    width: 100%;
+    color: #eee;
+    
+    position:absolute;
+    bottom:0;
+    left:0;
+    height:footer-<length>;
+}
+ 
+div#footer a { 
+ color: #fff;
+ }
+ 
+#topbar h1 {
+    font-size: 1.25em;
+        font-weight: normal;
+        color: #ccc;
+        padding: 5px;
+        margin-left: 10px;
+        background: none;
+        float: left;
+}
+ 
+#topbar {
+        background: #444;
+        color: #ddd;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+}
+ 
+ 
+#submit { font-size: 1.25em; }
+ 
+form td { padding: 5px; }
+ 

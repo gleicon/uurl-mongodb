@@ -1,0 +1,39 @@
+uURL
+
+URL Shortener using Redis for atomic operations and MongoDB for storing stats. 
+This is a quick proof of concept to use different NoSQL DBs where they belong.
+
+Redis is fast and has a lot of atomic operations which can be used as unique ID provider, 
+fast caching and indexing while storing the data.
+
+MongoDB is a document oriented DB which provides a rich query language.
+
+The same setup can be used to do analytics, just by changing where the shortened URL is created to a gif provider 
+or even a static code provider. It can also acts as a beacon or mail-targeted tracker.
+
+It's built over cyclone, which provides async request handling and MongoDB/Redis Twisted based drivers. 
+There are connections pools for both redis and mongodba and they live together pretty good.
+
+
+http://localhost:8888/ - main page
+http://localhost:8888/<id> - shortened url (redirects)
+http://localhost:8888/<id>+ - url stats
+
+Requires:
+
+http://omnipotent.net/jquery.sparkline/
+http://github.com/fiorix/mongo-async-python-driver
+http://github.com/fiorix/cyclone
+http://github.com/fiorix/txredisapi
+
+- Install everything, and run as python urlshortener.py
+- Point your browser to http://localhost:8888, enter an url to be shortened
+- give it some access
+- check stats page (the same shortened URL with a + sign at the end)
+- profit !
+
+TODO: Decouple analytics code using RestMQ, Tracking analytics module, code cleanup, better graphs in stats page, better html
+
+(c) gleicon 2010
+
+
